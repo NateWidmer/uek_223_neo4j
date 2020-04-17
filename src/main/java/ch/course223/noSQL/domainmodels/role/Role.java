@@ -1,5 +1,6 @@
 package ch.course223.noSQL.domainmodels.role;
 
+import ch.course223.noSQL.core.ExtendedNodeEntity;
 import ch.course223.noSQL.domainmodels.authority.Authority;
 import ch.course223.noSQL.domainmodels.user.User;
 import org.neo4j.ogm.annotation.*;
@@ -7,11 +8,7 @@ import org.neo4j.ogm.annotation.*;
 import java.util.Set;
 
 @NodeEntity(label = "Role")
-public class Role {
-
-  @Id
-  @GeneratedValue
-  private Long id;
+public class Role extends ExtendedNodeEntity {
 
   private String name;
 
@@ -23,14 +20,6 @@ public class Role {
 
   public Role() {
 
-  }
-
-  public Long getId() {
-    return id;
-  }
-
-  public void setId(Long id) {
-    this.id = id;
   }
 
   public String getName() {

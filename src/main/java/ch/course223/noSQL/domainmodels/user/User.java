@@ -1,5 +1,6 @@
 package ch.course223.noSQL.domainmodels.user;
 
+import ch.course223.noSQL.core.ExtendedNodeEntity;
 import ch.course223.noSQL.domainmodels.role.Role;
 import org.neo4j.ogm.annotation.*;
 
@@ -7,11 +8,7 @@ import java.time.LocalDate;
 import java.util.Set;
 
 @NodeEntity(label = "User")
-public class User {
-
-    @Id
-    @GeneratedValue
-    private Long id;
+public class User extends ExtendedNodeEntity {
 
     private String firstName;
 
@@ -34,14 +31,6 @@ public class User {
 
     public User() {
 
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getFirstName() {

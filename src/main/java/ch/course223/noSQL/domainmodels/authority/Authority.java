@@ -1,10 +1,11 @@
 package ch.course223.noSQL.domainmodels.authority;
 
+import ch.course223.noSQL.core.ExtendedNodeEntity;
 import ch.course223.noSQL.domainmodels.role.Role;
 import org.neo4j.ogm.annotation.*;
 
 @NodeEntity(label = "Authority")
-public class Authority {
+public class Authority extends ExtendedNodeEntity {
 
   @Id
   @GeneratedValue
@@ -17,14 +18,6 @@ public class Authority {
 
   public Authority() {
 
-  }
-
-  public Long getId() {
-    return id;
-  }
-
-  public void setId(Long id) {
-    this.id = id;
   }
 
   public String getName() {
